@@ -1,0 +1,57 @@
+@mixin bg-mask ($image, $pos: center, $size: cover) {
+  @supports (background-clip: text) {
+    background-image: $image;
+    background-repeat: no-repeat;
+    background-position: $pos;
+    background-size: $size;
+    color: transparent;
+    background-clip: text;
+  }
+}
+@mixin btn-flare {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    background-image: 
+      linear-gradient(0.25turn, 
+        rgba(224, 224, 224, 0.4), 
+        rgba(224, 224, 224, 0.8), 
+        rgba(224, 224, 224, 0.4));
+    display: block;
+    height: 100%;
+    width: 80px;
+    position: absolute;
+    top: 0;
+    left: -200px;
+    transform: translateX(0) skew(-30deg);
+    animation: btnFlare 3s ease infinite;
+  }
+}
+@mixin flare-anim {
+  @keyframes btnFlare {
+    0% {
+      transform: translateX(0) skew(-30deg);
+    }
+    20% {
+      transform: translateX(0) skew(-30deg);
+    }
+    80% {
+      transform: translateX(900px) skew(-30deg);
+    }
+    100% {
+      transform: translateX(900px) skew(-30deg);
+    }
+  }
+}
+@mixin card-inflated-top ($radius-secondary: 15px) {
+  border-top-left-radius: 50% $radius-secondary;
+  border-top-right-radius: 50% $radius-secondary;
+  border-bottom-left-radius: 50% $radius-secondary;
+  border-bottom-right-radius: 50% $radius-secondary;
+}
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

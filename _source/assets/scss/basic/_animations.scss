@@ -1,0 +1,125 @@
+.hidden {
+  opacity: 0;
+}
+.fi {
+  opacity: 0;
+  &.active {
+    animation: fadeIn 1s forwards;
+  }
+}
+.ffl {
+  opacity: 0;
+  &.active {
+    animation: fadeFromLeft .75s forwards;
+  }
+}
+.ffr {
+  opacity: 0;
+  &.active {
+    animation: fadeFromRight .75s forwards;
+  }
+}
+.ffd {
+  opacity: 0;
+  &.active {
+    animation: fadeFromDown 1s ease-out forwards;
+  }
+}
+.zio {
+  &.active {
+    animation: zoomInOut 1s forwards;
+  }
+}
+span.zio {
+  display: inline-block;
+}
+.dribble {
+  animation: dribble 5s infinite forwards;
+}
+span.dribble {
+  display: inline-block;
+}
+@keyframes fadeFromLeft {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  35% {opacity: 1;}
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromRight {
+  0% {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  35% {opacity: 1;}
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeFromDown {
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  35% {opacity: 1;}
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes dribble {
+  $scale: 1.1;
+  $rotate: 20deg;
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  60% {
+    transform: scale(1) rotate(0deg);
+  }
+  65% {
+    transform: scale($scale) rotate(0deg);
+  }
+  68% {
+    transform: scale($scale) rotate($rotate);
+  }
+  71% {
+    transform: scale($scale) rotate(-$rotate);
+  }
+  74% {
+    transform: scale($scale) rotate($rotate);
+  }
+  77% {
+    transform: scale($scale) rotate(-$rotate);
+  }
+  80% {
+    transform: scale($scale) rotate(0deg);
+  }
+  83% {
+    transform: scale(1) rotate(0deg);
+  }
+}

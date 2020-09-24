@@ -1,0 +1,4 @@
+mixin imgWebp(srcWebp, srcDefault, alt='', classname='')
+    picture(class=classname)
+        source(srcset=srcWebp, type="image/webp")
+        img(src=srcDefault, alt=alt)
